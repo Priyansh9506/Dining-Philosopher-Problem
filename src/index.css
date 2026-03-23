@@ -1,0 +1,64 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f7f6f3;
+  --white: #ffffff;
+  --border: #e5e4e0;
+  --border2: #eeece8;
+  --text: #1a1915;
+  --muted: #8a8880;
+  --muted2: #c0bdb7;
+  --surface: #f0efe9;
+  --thinking: #4a7cf7;
+  --hungry: #e8960a;
+  --eating: #1faa55;
+  --deadlock: #e03535;
+  --r: 12px;
+  --shadow: 0 1px 4px rgba(0,0,0,.05), 0 6px 18px rgba(0,0,0,.05);
+}
+
+html { font-size: 14px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--text);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--text);
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+input[type="number"] {
+  font-family: 'DM Sans', sans-serif;
+}
+
+button { font-family: 'DM Sans', sans-serif; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+@keyframes fadeup {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}

@@ -1,0 +1,473 @@
+/* App shell */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand { display: flex; align-items: center; gap: 11px; }
+
+.brandIcon {
+  width: 34px; height: 34px;
+  background: var(--text);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.brandTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.brandSub {
+  font-size: .71rem;
+  color: var(--muted);
+}
+
+.headerPills {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hpill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .75rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.hpillDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Page ────────────────────────────────────────────── */
+.page {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 22px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* ── Banners ─────────────────────────────────────────── */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--r);
+  font-size: .82rem;
+  font-weight: 500;
+  animation: slideIn .25s ease;
+}
+
+.bannerDl {
+  background: #fff0f0;
+  border: 1px solid #fcc;
+  color: var(--deadlock);
+  animation: slideIn .25s ease, blink 1.3s ease infinite;
+}
+
+.bannerOk {
+  background: #edfbf4;
+  border: 1px solid #a8ecc8;
+  color: var(--eating);
+}
+
+/* ── Hero row ─────────────────────────────────────────── */
+.heroRow {
+  display: grid;
+  grid-template-columns: 1fr 296px;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* ── Canvas card ─────────────────────────────────────── */
+.canvasCard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 20px 20px;
+  gap: 16px;
+}
+
+.canvas {
+  display: block;
+  width: min(480px, 100%);
+  height: min(480px, 100%);
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .74rem;
+  color: var(--muted);
+}
+
+.legDot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+}
+
+/* ── Right panel ─────────────────────────────────────── */
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.cardLabel {
+  font-size: .67rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin-bottom: 13px;
+}
+
+/* ── Stats ───────────────────────────────────────────── */
+.statRows { display: flex; flex-direction: column; gap: 10px; }
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statName {
+  width: 58px;
+  font-size: .78rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.barTrack {
+  flex: 1;
+  height: 4px;
+  background: var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width .45s ease;
+  min-width: 3px;
+}
+
+.statNum {
+  font-size: .78rem;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: right;
+}
+
+.totalsMini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 13px;
+  padding-top: 13px;
+  border-top: 1px solid var(--border2);
+}
+
+.totBox {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.totLabel {
+  font-size: .67rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 3px;
+}
+
+.totVal {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.totValRed { color: var(--deadlock); }
+
+/* ── Log ─────────────────────────────────────────────── */
+.logCard {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logWrap {
+  flex: 1;
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.logEntry {
+  font-size: .75rem;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border2);
+  color: var(--muted);
+  line-height: 1.4;
+  animation: fadeup .18s ease;
+}
+
+.log_eat     { color: var(--eating); }
+.log_hunger  { color: var(--hungry); }
+.log_dead    { color: var(--deadlock); font-weight: 600; }
+.log_done    { color: var(--text); font-weight: 600; }
+.log_info    { color: var(--muted); }
+
+/* ── Controls row ────────────────────────────────────── */
+.controlsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  gap: 12px;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btnRow { display: flex; gap: 8px; }
+
+.btn {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .13s, border-color .13s, color .13s, opacity .13s;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.btn:hover:not(:disabled) { background: var(--surface); }
+.btn:disabled { opacity: .38; cursor: not-allowed; }
+
+.btnFilled { background: var(--text); color: #fff; border-color: var(--text); }
+.btnFilled:hover:not(:disabled) { background: #2e2e2e; }
+
+.btnWarn { color: var(--deadlock); border-color: #fcc; }
+.btnWarn:hover:not(:disabled) { background: #fff0f0; }
+
+/* ── Speed ───────────────────────────────────────────── */
+.speedRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.speedLbl { font-size: .8rem; color: var(--muted); }
+.speedVal { font-size: .8rem; font-weight: 600; }
+
+/* ── Meal target ─────────────────────────────────────── */
+.mealRow { display: flex; flex-direction: column; gap: 8px; }
+
+.mealInputRow { display: flex; align-items: center; gap: 8px; }
+
+.numInput {
+  width: 68px;
+  padding: 7px 10px;
+  font-size: .85rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  outline: none;
+  transition: border-color .13s;
+}
+.numInput:focus { border-color: var(--text); }
+.numInput:disabled { opacity: .4; }
+
+.mealUnit { font-size: .8rem; color: var(--muted); }
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .8rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.progressBar {
+  height: 4px;
+  background: var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  transition: width .4s ease;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: .71rem;
+  color: var(--muted2);
+}
+
+/* ── Deadlock demo ───────────────────────────────────── */
+.demoDesc {
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+/* ── Mode selection ──────────────────────────────────── */
+.modesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.modeBtn {
+  padding: 13px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  font-size: .83rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: all .13s;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.modeBtn:hover { background: var(--surface); }
+
+.modeBtnActive {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+
+.modeIcon { display: flex; }
+
+.modeIcon svg {
+  stroke: var(--text);
+}
+
+.modeBtnActive .modeIcon svg { stroke: #fff; }
+
+.modeTag {
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.modeBtnActive .modeTag { color: rgba(255,255,255,.45); }
+
+.modeInfo {
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid var(--border2);
+  font-size: .79rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.modeInfo strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  font-size: .81rem;
+  margin-bottom: 3px;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 860px) {
+  .heroRow { grid-template-columns: 1fr; }
+  .rightPanel { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .logWrap { max-height: 200px; }
+}
+
+@media (max-width: 560px) {
+  .header { padding: 12px 16px; }
+  .page { padding: 14px 12px 36px; gap: 12px; }
+  .headerPills { gap: 10px; }
+  .hpill span:last-child { display: none; }
+  .controlsRow { grid-template-columns: 1fr; }
+  .modesGrid { grid-template-columns: repeat(3, 1fr); }
+  .modeBtn { padding: 10px 8px; font-size: .76rem; }
+  .modeTag { display: none; }
+  .rightPanel { grid-template-columns: 1fr; }
+}
